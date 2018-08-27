@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/odashkevych/cisco-challenge.svg?branch=master)](https://travis-ci.org/odashkevych/cisco-challenge)
+
 Coding Challenge
 ================
 
