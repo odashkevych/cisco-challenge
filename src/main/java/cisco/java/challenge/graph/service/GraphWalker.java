@@ -1,6 +1,6 @@
-package cisco.java.challenge.walker;
+package cisco.java.challenge.graph.service;
 
-import cisco.java.challenge.domain.GNode;
+import cisco.java.challenge.graph.domain.GNode;
 
 import java.util.List;
 

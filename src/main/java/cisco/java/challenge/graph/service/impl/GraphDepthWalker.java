@@ -1,7 +1,8 @@
-package cisco.java.challenge.walker;
+package cisco.java.challenge.graph.service.impl;
 
-import cisco.java.challenge.domain.GNode;
-import cisco.java.challenge.domain.TrackingGNodeWrapper;
+import cisco.java.challenge.graph.domain.GNode;
+import cisco.java.challenge.graph.domain.MutableGNodeWrapper;
+import cisco.java.challenge.graph.service.GraphWalker;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collections;
@@ -20,29 +21,27 @@ public class GraphDepthWalker implements GraphWalker {
             return Collections.emptyList();
         }
 
-        Stack<TrackingGNodeWrapper> iterativeStack = new Stack<>();
+        Stack<MutableGNodeWrapper> iterativeStack = new Stack<>();
         List<GNode> resultList = new LinkedList<>();
 
         resultList.add(startingNode);
-        iterativeStack.add(TrackingGNodeWrapper.copy(startingNode));
+        iterativeStack.add(MutableGNodeWrapper.copy(startingNode));
 
         while (!iterativeStack.empty()) {
-            TrackingGNodeWrapper currentNode = iterativeStack.peek();
+            MutableGNodeWrapper currentNodeWrapper = iterativeStack.peek();
 
-            if (!currentNode.hasChildren() || currentNode.isVisited()) {
+            if (currentNodeWrapper.hasNoChild() || currentNodeWrapper.childrenAreVisited()) {
                 iterativeStack.pop();
-                // [TODO] here we can copy result list as a single path and clean it
             } else {
-                TrackingGNodeWrapper[] children = currentNode.getChildren();
-
-                int i = currentNode.getNextChildToVisitPointer();
-                if (i < children.length) {
-                    TrackingGNodeWrapper child = children[i];
+                int index = currentNodeWrapper.getNextChildToVisitPointer();
+                if (index < currentNodeWrapper.getChildrenSize()) {
+                    MutableGNodeWrapper child = currentNodeWrapper.getChild(index);
                     if (!resultList.contains(child.getNode())) {
                         iterativeStack.push(child);
                         resultList.add(child.getNode());
                     }
                 }
+                currentNodeWrapper.setNextChildToVisitPointer(++index);
             }
         }
         return resultList;

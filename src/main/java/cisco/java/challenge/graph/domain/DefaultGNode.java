@@ -1,4 +1,4 @@
-package cisco.java.challenge.domain;
+package cisco.java.challenge.graph.domain;
 
 import java.util.Arrays;
 import java.util.Objects;
