@@ -3,7 +3,6 @@
 
 .metadata
 bin/
-tmp/
 *.tmp
 *.bak
 *.swp
@@ -72,7 +71,6 @@ local.properties
 .idea/**/dataSources.local.xml
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
 # Gradle
@@ -114,8 +112,6 @@ fabric.properties
 .idea/httpRequests
 ### Java template
 # Compiled class file
-*.class
-
 # Log file
 *.log
 
@@ -144,7 +140,6 @@ hs_err_pid*
 temp/
 
 # default output directories
-classes/
 deploy/
 javadoc/
 
@@ -158,12 +153,9 @@ nbdist/
 .nb-gradle/
 ### Gradle template
 .gradle
-/build/
-
+!gradle/wrapper/gradle-wrapper.jar
 # Ignore Gradle GUI config
 gradle-app.setting
-
-gradle/wrapper
 
 # Cache of project
 .gradletasknamecache
