@@ -1,3 +1,5 @@
+https://travis-ci.org/odashkevych/cisco-challenge.svg?branch=master
+
 Coding Challenge
 ================
 
