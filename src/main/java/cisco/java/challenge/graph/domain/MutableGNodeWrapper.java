@@ -1,7 +1,5 @@
 package cisco.java.challenge.graph.domain;
 
-import java.util.Arrays;
-
 public class MutableGNodeWrapper {
 
     private GNode node;
@@ -49,16 +47,6 @@ public class MutableGNodeWrapper {
 
     public GNode getNode() {
         return node;
-    }
-
-    @Override
-    public String toString() {
-        return "MutableGNodeWrapper{" +
-            "node=" + node +
-            ", childrenCopied=" + childrenCopied +
-            ", children=" + Arrays.toString(children) +
-            ", lastChildPointer=" + lastChildPointer +
-            '}';
     }
 
     public int getNextChildToVisitPointer() {
