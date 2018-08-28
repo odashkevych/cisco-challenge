@@ -49,6 +49,20 @@ public class RegexpWordCounterTest {
         assertThat(result.get("were")).isEqualTo(1);
         assertThat(result.get("and")).isEqualTo(1);
         assertThat(result.get("but")).isEqualTo(1);
+    }
 
+    @Test
+    public void testTextWithWithSpecificCharacters() {
+        String dummyText = "\t 1st comma-separated SPACE, any|separated 12 - 3 = 4 \n \n\rspace part-.";
+
+        Map<String, Integer> result = wordCounter.count(dummyText);
+
+        assertThat(result.size()).isEqualTo(6);
+        assertThat(result.get("space")).isEqualTo(2);
+        assertThat(result.get("1st")).isEqualTo(1);
+        assertThat(result.get("comma-separated")).isEqualTo(1);
+        assertThat(result.get("any")).isEqualTo(1);
+        assertThat(result.get("separated")).isEqualTo(1);
+        assertThat(result.get("part")).isEqualTo(1);
     }
 }
