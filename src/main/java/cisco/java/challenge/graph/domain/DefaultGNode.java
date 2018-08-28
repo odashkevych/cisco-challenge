@@ -8,11 +8,6 @@ public class DefaultGNode implements GNode {
 
     private DefaultGNode[] children;
 
-    public DefaultGNode(String name, DefaultGNode... children) {
-        this.name = name;
-        this.children = children;
-    }
-
     public DefaultGNode(String name) {
         this.name = name;
         this.children = new DefaultGNode[0];
@@ -30,13 +25,6 @@ public class DefaultGNode implements GNode {
     @Override
     public GNode[] getChildren() {
         return Arrays.copyOf(children, children.length);
-    }
-
-    @Override
-    public String toString() {
-        return "DefaultGNode{" +
-            "name='" + name + '\'' +
-            '}';
     }
 
     @Override
