@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/odashkevych/coding-challenge.svg?branch=master)](https://travis-ci.org/odashkevych/coding-challenge)
+[![Build Status](https://travis-ci.org/odashkevych/coding-challenge.svg?branch=master)](https://travis-ci.org/odashkevych/coding-challenge) [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/odashkevych/coding-challenge.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/odashkevych/coding-challenge/context:java)
 
 Coding Challenge
 ================
